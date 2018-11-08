@@ -330,7 +330,13 @@ def load_2D_dataset():
     train_Y = data['y'].T
     test_X = data['Xval'].T
     test_Y = data['yval'].T
+    #cValue = [(0,255,255),(255,0,255)]
+    print(train_Y)
+    #print(train_Y.size())
+    for i in train_Y :
+        pos = train_Y.T[i]
 
-    plt.scatter(train_X[0, :], train_X[1, :], c=train_Y, s=40, cmap=plt.cm.Spectral);
+    print(cValue)
+    plt.scatter(train_X[0, :], train_X[1, :], c = cValue[train_Y],s=40, cmap=plt.cm.Spectral);
     
     return train_X, train_Y, test_X, test_Y
